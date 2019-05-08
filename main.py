@@ -7,6 +7,9 @@ import multiprocessing as mp
 import preprocessing
 
 def main(input_dir, output_dir):
+    """
+    Main logic to load, process and save all images of the dataset. 
+    """
     image_path_gen = (path for path in glob.iglob(input_dir + "**/*.jpg"))
     pool = mp.Pool(processes=mp.cpu_count())
     print(f"Using {mp.cpu_count()} CPU Cores")
